@@ -45,22 +45,22 @@ The model outputs a schedule of courses, indicating the year, course, weekday, p
 
 [Back To The Top](#title)
 
----
-
 ## 📖 Example
 
 To run the model, follow these steps:
 
 1. Open the `class_scheduling.mzn` file in the MiniZinc IDE.
 2. Set the parameters as per your requirements. For example:
-    - `num_levels = 4`
-    - `num_courses_per_year = 4`
-    - `num_classrooms = 303`
-    - `num_timeslots = 5`
-    - `num_days = 5`
-    - `course_credit = 3`
+    - `N_levels = 4`
+    - `N_courses = 4`
+    - `N_classroom = 303`
+    - `N_timeSlotsPerDayPerClassroom = 4`
+    - `N_weekdays = 4`
+    - `N_creditPerCourses = 3`
 3. Click on the "Run" button in the IDE. The model will start solving the problem and will output a schedule once it's done.
 4. The output will be a 5-dimensional array indicating the year, course, weekday, period, and classroom for each scheduled course.
+
+The output of the model is available in this [CSV file](./schedule.csv).
 
 Please note that the model may take some time to find a solution depending on the complexity of the problem (i.e., the number of courses, classrooms, timeslots, etc.).
 
