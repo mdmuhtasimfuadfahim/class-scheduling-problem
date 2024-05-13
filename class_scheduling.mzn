@@ -1,5 +1,5 @@
 % 
-% Classroom Scheduling problem in MiniZinc.
+% Class Scheduling Model for Universities
 % 
 % This MiniZinc model was created by Md. Muhtasim Fuad Fahim, Alzum Shahadat Miazee
 % for the course "CSE 6213 | Advanced Artificial Intelligence" at IUT in May, 2024.

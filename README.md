@@ -1,4 +1,4 @@
-# Classroom Scheduling Model 👋
+# Classroom Scheduling Model for Universities 👋
 
 The `classroom-scheduling-model` is a MiniZinc model designed to solve the classroom scheduling problem in a university setting. It schedules courses considering various constraints like the number of times a course must be scheduled per week, classroom availability, and total credit hours for all courses.
 
@@ -47,22 +47,46 @@ The model outputs a schedule of courses, indicating the year, course, weekday, p
 
 ## 📖 Example
 
-To run the model, follow these steps:
+To run the model, you have two options:
+
+### Option 1: Run the model directly in the MiniZinc IDE
+
+Follow these steps:
 
 1. Open the `class_scheduling.mzn` file in the MiniZinc IDE.
-2. Set the parameters as per your requirements. For example:
+2. Click on the "Run" button in the IDE. 
+3. The model will ask you to set the parameters as per your requirements. For example:
     - `N_levels = 4`
     - `N_courses = 4`
     - `N_classroom = 303`
     - `N_timeSlotsPerDayPerClassroom = 4`
     - `N_weekdays = 4`
     - `N_creditPerCourses = 3`
-3. Click on the "Run" button in the IDE. The model will start solving the problem and will output a schedule once it's done.
-4. The output will be a 5-dimensional array indicating the year, course, weekday, period, and classroom for each scheduled course.
+4. The model will start solving the problem and will output a schedule once it's done.
+5. The output will be a 5-dimensional array indicating the year, course, weekday, period, and classroom for each scheduled course.
 
-The output of the model is available in this [CSV file](./schedule.csv).
+### Option 2: Compile the model into a FlatZinc file and run it
 
-Please note that the model may take some time to find a solution depending on the complexity of the problem (i.e., the number of courses, classrooms, timeslots, etc.).
+Follow these steps:
+
+1. Open a terminal.
+2. Navigate to the directory containing the `class_scheduling.mzn` file.
+3. Run the following command to compile the `class_scheduling.mzn` file into a `class_scheduling.fzn` file:
+    ```bash
+    minizinc --compile --solver org.minizinc.mzn-fzn -o class_scheduling.fzn class_scheduling.mzn
+    ```
+4. Run the `class_scheduling.fzn` file using the following command:
+    ```bash
+    minizinc --solver org.minizinc.mzn-fzn class_scheduling.fzn
+    ```
+5. The model will start solving the problem and will output a schedule once it's done.
+6. The output will be a 1-dimensional array of binary values. Each value represents whether a specific course is scheduled at a specific time and place.
+7. Reshape the output array into a 5-dimensional array (or the appropriate dimensions based on your model) to interpret the schedule. This step will depend on the programming language and tools you are using.
+8. Interpret the reshaped array to understand the schedule. Each dimension of the array represents a specific aspect of the schedule (e.g., year, course, weekday, period, classroom).
+
+The output of the model is available in this [CSV file](./schedule_output.fzn.csv).
+
+Please note that the model may take some time to find a solution depending on the complexity of the problem (i.e., the number of courses, classrooms, timeslots, etc.). You can use the `HiGHS 1.6.0` solver to run the model faster.
 
 [Back To The Top](#title)
 
