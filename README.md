@@ -49,7 +49,7 @@ The model outputs a schedule of courses, indicating the year, course, weekday, p
 
 To run the model, you have two options:
 
-#### Option 1: Run the model directly in the MiniZinc IDE
+### Option 1: Run the model directly in the MiniZinc IDE
 
 Follow these steps:
 
@@ -65,7 +65,7 @@ Follow these steps:
 4. The model will start solving the problem and will output a schedule once it's done.
 5. The output will be a 5-dimensional array indicating the year, course, weekday, period, and classroom for each scheduled course.
 
-#### Option 2: Compile the model into a FlatZinc file and run it
+### Option 2: Compile the model into a FlatZinc file and run it
 
 Follow these steps:
 
