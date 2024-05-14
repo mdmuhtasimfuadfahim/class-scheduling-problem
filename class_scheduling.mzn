@@ -55,14 +55,17 @@ array[Levels, Courses, Weekdays, Timeslots, Classrooms] of var 0..1: StudentCour
 constraint forall(s in Levels, c in Courses)(
     sum(d in Weekdays, r in Classrooms, t in Timeslots)(StudentCourseTimeslot[s, c, d, t, r]) == 3
 );
-%Constraint 02: Each classroom can only hold one class at a time for each day
+
+%Constraint 02: A course should be scheduled once a day
 constraint forall(r in Classrooms, t in Timeslots, d in Weekdays)(
     sum(s in Levels, c in Courses)(StudentCourseTimeslot[s, c, d, t, r]) <= 1
 );
-%%Constraint 03: A course should be scheduled once a day
+
+%Constraint 03: Each classroom can only hold one class at a time for each day
 constraint forall(s in Levels, c in Courses, d in Weekdays)(
     sum(r in Classrooms, t in Timeslots)(StudentCourseTimeslot[s, c, d, t, r]) <= 1
 );
+
 %Constraint 04: Number of classes per week
 constraint forall(s in Levels, c in Courses)(
     sum(d in Weekdays, t in Timeslots, r in Classrooms)(StudentCourseTimeslot[s, c, d, t, r]) <= N_creditPerCourses*N_levels*N_courses
