@@ -114,13 +114,13 @@ Please note that the model may take some time to find a solution depending on th
 
 ## 👤 Author
 
-🤓 **Md. Muhtasim Fuad Fahim <muhtasimfahim@iut-dhaka.edu>**
-
-- Github: [@mdmuhtasimfuadfahim](https://github.com/mdmuhtasimfuadfahim)
-
 🤓 **Alzum Shahadat Miazee <alzumshahadat@iut-dhaka.edu>**
 
 - Github: [@alzumiazee](https://github.com/alzumiazee/)
+
+🤓 **Md. Muhtasim Fuad Fahim <muhtasimfahim@iut-dhaka.edu>**
+
+- Github: [@mdmuhtasimfuadfahim](https://github.com/mdmuhtasimfuadfahim)
 
 [Back To The Top](#title)
 
